@@ -51,12 +51,12 @@ fi
 default_exercise_interval=30
 default_rest_interval=30
 if [ -z "$2" ]; then
-	exercise_interval=default_exercise_interval
-	rest_interval=default_rest_interval
+	exercise_interval=$default_exercise_interval
+	rest_interval=$default_rest_interval
 else
 	exercise_interval=$2
 	if [ -z "$3" ]; then
-		rest_interval=default_rest_interval
+		rest_interval=$default_rest_interval
 	else
 		rest_interval=$3
 	fi
