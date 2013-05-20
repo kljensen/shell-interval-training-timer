@@ -76,13 +76,13 @@ for (( i = 0; i < ${NUM_EXERCISES}; i++ )); do
 	#
 	exercise=${EXERCISES[$i]}
 	say "$exercise for $exercise_interval seconds, Go!"
-	sleep 5
+	sleep $exercise_interval
 
 	# Rest or finish up
 	#
 	if [[ $i != $((${NUM_EXERCISES} - 1)) ]]; then
 		say "Rest $rest_interval seconds"
-		sleep 10
+		sleep $rest_interval
 	else
 		say "Done!"
 	fi
