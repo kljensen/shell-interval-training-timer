@@ -6,8 +6,8 @@ A small shell script for doing [interval training](http://en.wikipedia.org/wiki/
 reading the
 [NY Times "The Scientific 7-Minute Workout"](http://well.blogs.nytimes.com/2013/05/09/the-scientific-7-minute-workout/)
 article covering the
-[HICT work by Kilka & Jordan](http://journals.lww.com/acsm-healthfitness/Fulltext/2013/05000/HIGH_INTENSITY_CIRCUIT_TRAINING_USING_BODY_WEIGHT_.5.aspx).
-The workout from the that manuscript is the default for this script.  
+[HICT research by Kilka & Jordan](http://journals.lww.com/acsm-healthfitness/Fulltext/2013/05000/HIGH_INTENSITY_CIRCUIT_TRAINING_USING_BODY_WEIGHT_.5.aspx).
+The workout from that manuscript is the default for this script.  
 
 ### How it works
 
