@@ -16,9 +16,7 @@ and announces each one verbally
 (literaly, over your speakers)
 using the [`say` command](http://www.unix.com/man-page/osx/1/SAY/).
 The script sleeps between exercises using the
-[`sleep` command](http://www.unix.com/man-page/osx/1/sleep/).
-
-It has only been tested on Mac OSX.
+[`sleep` command](http://www.unix.com/man-page/osx/1/sleep/).  It has only been tested on Mac OSX.
 
 ### Usage
 
