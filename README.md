@@ -12,7 +12,9 @@ The workout from that manuscript is the default for this script.
 ### How it works
 
 The shell script loops through list of exercises (potentially user-supplied)
-and announces each one using the [`say` command](http://www.unix.com/man-page/osx/1/SAY/).
+and announces each one verbally
+(literaly, over your speakers)
+using the [`say` command](http://www.unix.com/man-page/osx/1/SAY/).
 The script sleeps between exercises using the
 [`sleep` command](http://www.unix.com/man-page/osx/1/sleep/).
 
