@@ -49,7 +49,7 @@ fi
 # Use the default intervals or get user-specified ones
 #
 default_exercise_interval=30
-default_rest_interval=30
+default_rest_interval=10
 if [ -z "$2" ]; then
 	exercise_interval=$default_exercise_interval
 	rest_interval=$default_rest_interval
