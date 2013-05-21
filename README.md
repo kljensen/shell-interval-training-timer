@@ -1,6 +1,8 @@
 Shell interval training timer
 =============================
 
+![Calvin Coolidge getting fit](http://files.kyle-jensen.com.s3.amazonaws.com/shared/coolidge.jpg "Calvin Coolidge getting fit")
+
 A small shell script for doing [interval training](http://en.wikipedia.org/wiki/Interval_training)
 (or circuit training) coveniently from your desk.  I was inspired to write this quick script after
 reading the
