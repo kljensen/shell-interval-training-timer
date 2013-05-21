@@ -1,15 +1,16 @@
 Shell interval training timer
 =============================
 
-![Calvin Coolidge getting fit](http://files.kyle-jensen.com.s3.amazonaws.com/shared/coolidge.jpg "Calvin Coolidge getting fit")
 
 A small shell script for doing [interval training](http://en.wikipedia.org/wiki/Interval_training)
-(or circuit training) coveniently from your desk.  I was inspired to write this quick script after
+(or circuit training) coveniently from your desk.  The script will make your computer call out the exercises you need to do, when you need to do them.  I was inspired to write this quick script after
 reading the
 [NY Times "The Scientific 7-Minute Workout"](http://well.blogs.nytimes.com/2013/05/09/the-scientific-7-minute-workout/)
 article covering the
 [HICT research by Kilka & Jordan](http://journals.lww.com/acsm-healthfitness/Fulltext/2013/05000/HIGH_INTENSITY_CIRCUIT_TRAINING_USING_BODY_WEIGHT_.5.aspx).
 The workout from that manuscript is the default for this script.  
+
+![Calvin Coolidge getting fit](http://files.kyle-jensen.com.s3.amazonaws.com/shared/coolidge.jpg "Calvin Coolidge getting fit")
 
 ### How it works
 
