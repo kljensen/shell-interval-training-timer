@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Shell-interval-training-timer by kljensen</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Shell-interval-training-timer</h1>
+        <p>shell-interval-workout-timer</p>
+
+        <p class="view"><a href="https://github.com/kljensen/shell-interval-training-timer">View the Project on GitHub <small>kljensen/shell-interval-training-timer</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/kljensen/shell-interval-training-timer/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/kljensen/shell-interval-training-timer/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/kljensen/shell-interval-training-timer">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>Shell interval training timer</h1>
+
+<p><img src="http://files.kyle-jensen.com.s3.amazonaws.com/shared/coolidge.jpg" width="490" height="390"></p>
+
+<p>A small shell script for doing <a href="http://en.wikipedia.org/wiki/Interval_training">interval training</a>
+(or circuit training) coveniently from your desk.  I was inspired to write this quick script after
+reading the
+<a href="http://well.blogs.nytimes.com/2013/05/09/the-scientific-7-minute-workout/">NY Times "The Scientific 7-Minute Workout"</a>
+article
+covering the
+<a href="http://journals.lww.com/acsm-healthfitness/Fulltext/2013/05000/HIGH_INTENSITY_CIRCUIT_TRAINING_USING_BODY_WEIGHT_.5.aspx">HICT research by Kilka &amp; Jordan</a>.
+The workout from that manuscript is the default for this script.  </p>
+
+<h3>How it works</h3>
+
+<p>The shell script loops through list of exercises (potentially user-supplied)
+and announces each one verbally
+(literaly, over your speakers)
+using the <a href="http://www.unix.com/man-page/osx/1/SAY/"><code>say</code> command</a>.
+The script sleeps between exercises using the
+<a href="http://www.unix.com/man-page/osx/1/sleep/"><code>sleep</code> command</a>.  It has only been tested on Mac OSX.</p>
+
+<h3>Usage</h3>
+
+<p>First, you probably want to make the script executable</p>
+
+<pre><code>chmod a+x ./workout.sh
+</code></pre>
+
+<p>Do the default workout</p>
+
+<pre><code>./workout.sh
+</code></pre>
+
+<p>Or, you can supply a file with your own exercises, 1 per line</p>
+
+<pre><code>./workout.sh my-exercises.txt
+</code></pre>
+
+<p>Finally, here's how you would supply a file with your own exercises,
+1 per line and do each for 45 seconds, resting for 20.</p>
+
+<pre><code>./workout.sh my-exercises.txt 45 20
+</code></pre>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/kljensen">kljensen</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
