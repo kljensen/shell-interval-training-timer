@@ -48,9 +48,30 @@ and announces each one verbally
 (literaly, over your speakers)
 using the <a href="http://www.unix.com/man-page/osx/1/SAY/"><code>say</code> command</a>.
 The script sleeps between exercises using the
-<a href="http://www.unix.com/man-page/osx/1/sleep/"><code>sleep</code> command</a>.  It has only been tested on Mac OSX.</p>
+<a href="http://www.unix.com/man-page/osx/1/sleep/"><code>sleep</code> command</a>.  This basically sounds like</p>
 
-<h3>Installation</h3>
+<blockquote>
+<p><strong>Ready? We're going to do 10 exercises for 30s each, starting with  'push ups'.</strong></p>
+
+<p>[a moment passes]</p>
+
+<p><strong>Ok, 'push ups' for 30 seconds, Go!</strong></p>
+
+<p>[30s passes]</p>
+
+<p><strong>Stop, Rest 10 seconds.  Next, you will do 'sit-ups'</strong></p>
+
+<p>[10s passes and the process repeats itself]</p>
+</blockquote>
+
+<p>So, the computer is leading you through the exercises in a manner that</p>
+
+<ul>
+<li>keeps track of time for you;</li>
+<li>does not require looking at the computer;</li>
+<li>alerts you to the upcoming exercise so that you can get ready; and,</li>
+<li>allows you to play music in the background.</li>
+</ul><h3>Installation</h3>
 
 <p>The easiest way to install the script is to clone the repo on GitHub:</p>
 
@@ -84,6 +105,10 @@ The script sleeps between exercises using the
 
 <pre><code>./workout.sh -i my-exercises.txt -t 45 -r 20
 </code></pre>
+
+<h3>Caveats</h3>
+
+<p>This has only been tested on Mac OSX.</p>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/kljensen">kljensen</a></p>
