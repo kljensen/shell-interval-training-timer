@@ -20,7 +20,26 @@ and announces each one verbally
 (literaly, over your speakers)
 using the [`say` command](http://www.unix.com/man-page/osx/1/SAY/).
 The script sleeps between exercises using the
-[`sleep` command](http://www.unix.com/man-page/osx/1/sleep/).  It has only been tested on Mac OSX.
+[`sleep` command](http://www.unix.com/man-page/osx/1/sleep/).  This basically sounds like
+
+> **Ready? We're going to do 10 exercises for 30s each, starting with  'push ups'.**
+
+> [a moment passes]
+
+> **Ok, 'push ups' for 30 seconds, Go!**
+
+> [30s passes]
+
+> **Stop, Rest 10 seconds.  Next, you will do 'sit-ups'**
+
+> [10s passes and the process repeats itself]
+
+So, the computer is leading you through the exercises in a manner that
+
+* keeps track of time for you;
+* does not require looking at the computer;
+* alerts you to the upcoming exercise so that you can get ready; and,
+* allows you to play music in the background.
 
 
 ### Installation
@@ -52,3 +71,7 @@ Finally, here's how you would supply a file with your own exercises,
 1 per line and do each for 45 seconds, resting for 20.
 
 	./workout.sh -i my-exercises.txt -t 45 -r 20
+
+### Caveats
+
+This has only been tested on Mac OSX.
