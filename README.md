@@ -2,7 +2,7 @@ Shell interval training timer
 =============================
 
 
-A small shell script for doing [interval training](http://en.wikipedia.org/wiki/Interval_training)
+A [small shell script](https://github.com/kljensen/shell-interval-training-timer/blob/master/workout.sh) for doing [interval training](http://en.wikipedia.org/wiki/Interval_training)
 (or circuit training) coveniently from your desk.  The script will make your computer call out the exercises you need to do, when you need to do them.  I was inspired to write this quick script after
 reading the
 [NY Times "The Scientific 7-Minute Workout"](http://well.blogs.nytimes.com/2013/05/09/the-scientific-7-minute-workout/)
@@ -12,6 +12,7 @@ The workout from that manuscript is the default for this script.
 
 ![Calvin Coolidge getting fit](http://files.kyle-jensen.com.s3.amazonaws.com/shared/coolidge.jpg "Calvin Coolidge getting fit")
 
+
 ### How it works
 
 The shell script loops through list of exercises (potentially user-supplied)
@@ -20,6 +21,18 @@ and announces each one verbally
 using the [`say` command](http://www.unix.com/man-page/osx/1/SAY/).
 The script sleeps between exercises using the
 [`sleep` command](http://www.unix.com/man-page/osx/1/sleep/).  It has only been tested on Mac OSX.
+
+
+### Installation
+
+The easiest way to install the script is to clone the repo on GitHub:
+
+	git clone https://github.com/kljensen/shell-interval-training-timer
+
+Or you can just grab the shell script
+
+	curl -O https://raw.github.com/kljensen/shell-interval-training-timer/master/workout.sh
+	
 
 ### Usage
 
