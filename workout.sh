@@ -17,73 +17,106 @@
 #    ./workout.sh my-exercises.txt 45 20
 #
 
-# Use the default exercises or read in user specified exercises
+# Custom die function.
 #
-if [ -z "$1" ]; then
-
-	EXERCISES=(
-		"jumping jacks"
-		"wall sit"
-		"push ups"
-		"abdominal crunch"
-		"chair step-up"
-		"squats"
-		"triceps dip on chair"
-		"plank on floor"
-		"high knee running"
-		"lunge"
-		"push-ups with rotating arms"
-		"side plank"
-	)
-else
-
-	# Need to swap out IFS in case there are spaces
-	# in the exercise names.
-	OLD_IFS=$IFS
-	IFS=$'\n'
-	EXERCISES=( $(cat "$1") )
-	IFS=$OLD_IFS
-fi
+die() { echo >&2 -e "\nERROR: $@\n"; exit 1; }
 
 
-# Use the default intervals or get user-specified ones
+# The default exercises
 #
-default_exercise_interval=30
-default_rest_interval=10
-if [ -z "$2" ]; then
-	exercise_interval=$default_exercise_interval
-	rest_interval=$default_rest_interval
-else
-	exercise_interval=$2
-	if [ -z "$3" ]; then
-		rest_interval=$default_rest_interval
-	else
-		rest_interval=$3
-	fi
-fi
+EXERCISES=(
+	"jumping jacks"
+	"wall sit"
+	"push ups"
+	"abdominal crunch"
+	"chair step-up"
+	"squats"
+	"triceps dip on chair"
+	"plank on floor"
+	"high knee running"
+	"lunge"
+	"push-ups with rotating arms"
+	"side plank"
+)
+
+# Default interval for exercises
+exercise_interval=30
+
+# Default interval for resting
+rest_interval=10
 
 
-# Get ready
+# Parse user options
 #
-say "Ready?"
-sleep 2
+while getopts ":i:t:r:" opt; do
+  case $opt in
+
+	# Read in a user-supplied file with exercises.
+    i)
+		if [[ -r $OPTARG ]]; then
+			# Need to swap out IFS in case there are spaces
+			# in the exercise names.
+			OLD_IFS=$IFS
+			IFS=$'\n'
+			EXERCISES=( $(cat "$OPTARG") )
+			IFS=$OLD_IFS
+		else
+			die "$OPTARG is not a valid input file"
+		fi
+		;;
+
+    # Set user-supplied exercise interval
+    t)
+		if [[ "$OPTARG" =~ ^[0-9]+$ ]] ; then
+			exercise_interval=${OPTARG}		
+		else
+			die "Invalid parameter for exercise interval: ${OPTARG}. It should be an integer."
+		fi
+    	;;
+
+    # Set user-supplied rest interval
+    r)
+		if [[ "$OPTARG" =~ ^[0-9]+$ ]] ; then
+			rest_interval=${OPTARG}		
+		else
+			die "Invalid parameter for exercise interval: ${OPTARG}. It should be an integer."
+		fi
+    	;;
+
+    \?)
+		echo "Invalid option: -$OPTARG" >&2
+		exit 1
+		;;
+    :)
+		echo "Option -$OPTARG requires an argument." >&2
+		exit 1
+		;;
+  esac
+done
 
 
+# Loop through the exercises, announcing them one-by-one.
+#
 NUM_EXERCISES=${#EXERCISES[@]}
 for (( i = 0; i < ${NUM_EXERCISES}; i++ )); do
 
+	exercise=${EXERCISES[$i]}
+	if [[ $i == 0 ]]; then
+		say "Ready? We're going to do ${NUM_EXERCISES} different 
+		exercises for $exercise_interval seconds each, starting 
+		with $exercise in 5 seconds."
+		sleep 5
+	else
+		say "Stop.  Rest $rest_interval seconds.  Next, you will do $exercise."
+		sleep $rest_interval
+	fi
+
 	# Do the excersize
 	#
-	exercise=${EXERCISES[$i]}
-	say "$exercise for $exercise_interval seconds, Go!"
+	say "Ok, $exercise for $exercise_interval seconds, Go!"
 	sleep $exercise_interval
 
-	# Rest or finish up
-	#
-	if [[ $i != $((${NUM_EXERCISES} - 1)) ]]; then
-		say "Rest $rest_interval seconds"
-		sleep $rest_interval
-	else
-		say "Done!"
-	fi
 done
+say "Done!"
+
+

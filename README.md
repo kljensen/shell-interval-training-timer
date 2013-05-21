@@ -33,9 +33,9 @@ Do the default workout
 
 Or, you can supply a file with your own exercises, 1 per line
 
-	./workout.sh my-exercises.txt
+	./workout.sh -i my-exercises.txt
 
 Finally, here's how you would supply a file with your own exercises,
 1 per line and do each for 45 seconds, resting for 20.
 
-	./workout.sh my-exercises.txt 45 20
+	./workout.sh -i my-exercises.txt -t 45 -r 20
